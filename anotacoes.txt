@@ -1,0 +1,104 @@
+
+
+no terminal:  python -m pip install Django
+              git clone https://github.com/django/django.git
+              py -m pip install -e django\
+
+              python -m django --version
+
+no terminal:
+              django-admin startproject cadastro_enderecos
+
+no terminal da pasta cadastro_enderecos:
+              python manage.py runserver  ou  py manage.py runserver 8080
+              py manage.py startapp polls
+
+
+no terminal da pasta cadastro_enderecos:
+              py manage.py runserver
+              py manage.py migrate
+              py manage.py makemigrations polls
+              py manage.py sqlmigrate polls 0001 (aparece um mensagem no terminal)
+              py manage.py migrate
+              py manage.py shell
+              python manage.py shell
+              py manage.py createsuperuser
+              criar nome, email e senha
+              py manage.py runserver
+
+
+ver:
+        http://127.0.0.1:8000/admin/login/?next=/admin/
+        preencher e entrar
+        aparece POLLS -> Questions
+
+
+
+
+
+
+
+
+parei em https://docs.djangoproject.com/en/3.1/intro/tutorial03/
+         https://www.djangoproject.com/start/
+
+
+
+
+
+---------------------------------------------------
+
+python manage.py sqlmigrate auth 0001
+python manage.py sqlmigrate sessions 0001
+python manage.py showmigrations
+python manage.py migrate
+python manage.py startapp cadastro
+python manage.py makemigrations cadastro
+python manage.py sqlmigrate cadastro 0001
+python manage.py migrate cadastro
+python manage.py createsuperuser
+pip install ipython
+python manage.py shell
+         digitar linha a linha:
+         from cadastro.models import Post
+         posts = Post.objects.all()
+         posts
+         post = Post.objects.get(id=1)
+         post
+         post.author
+         post.created
+         post.title = 'Meu primeiro artigo alterado!'
+         post.title
+         post.save()
+         Post.objects.filter(author__username="admin")
+         Post.objects.filter(author__username="user1")
+         from django.contrib.auth.models import User
+         user = User.objects.get(username="admin")
+         user
+         user.post_set.all()
+
+
+python manage.py shell
+         digitar linha a linha:
+         from cadastro.models import Post
+         post = Post.objects.get(id=1)
+         post
+         post.get_absolute_url()
+         post = Post.objects.get(id=2)
+         post
+         post.get_absolute_url()
+python manage.py runserver
+
+
+
+aparece um erro em http://127.0.0.1:8000/  , e ver http://127.0.0.1:8000/cadastro/
+com isso para de dar erro
+ver http://127.0.0.1:8000/cadastro/
+ver http://127.0.0.1:8000/cadastro/meu-primeiro-artigo
+elementos clicaveis agora
+
+
+---------------------------------------------------
+
+
+
